@@ -1,0 +1,76 @@
+{
+  "name": "dsh-leak-guard",
+  "version": "0.1.0",
+  "description": "发布前凭据审计：扫描工作区里有没有 API key / token / 私钥 / 数据库连接串 / 明文密码，别让它们跟着 commit 一起出去。零依赖、纯本地、不上传，发现结果脱敏后再返回。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./scanner": "./lib/scanner.js",
+    "./patterns": "./lib/patterns.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "secret-scanning",
+    "credential-leak",
+    "api-key",
+    "token",
+    "leak-guard",
+    "security",
+    "pre-commit",
+    "publish-guard",
+    "凭据",
+    "泄露",
+    "密钥"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7gzgn/dsh-leak-guard.git"
+  },
+  "homepage": "https://github.com/7gzgn/dsh-leak-guard#readme",
+  "bugs": {
+    "url": "https://github.com/7gzgn/dsh-leak-guard/issues"
+  },
+  "dsh": {
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible"
+      }
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.4",
+    "@deepseek-ai/dsh-system-prompt": "^0.2.0-rc.2",
+    "@deepseek-ai/dsh-tools": "^0.2.0-rc.2"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-system-prompt": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  }
+}
