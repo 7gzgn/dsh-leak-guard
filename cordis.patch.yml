@@ -1,0 +1,5 @@
+# dsh-leak-guard bundle patch: 把插件行插进 web profile 名单。
+# 以 profile bundle 层（package.json 的 dsh.bundle.patch 字段）应用。
+- insert:
+    - id: plugin-leak-guard
+      name: 'dsh-leak-guard'
