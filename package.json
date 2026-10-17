@@ -1,6 +1,6 @@
 {
   "name": "dsh-leak-guard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "发布前凭据审计：扫描工作区里有没有 API key / token / 私钥 / 数据库连接串 / 明文密码，别让它们跟着 commit 一起出去。零依赖、纯本地、不上传，发现结果脱敏后再返回。",
   "type": "module",
   "main": "lib/index.js",
@@ -53,7 +53,8 @@
   "dsh": {
     "compatibility": {
       "dshReleases": {
-        "0.2.0-rc.2": "compatible"
+        "0.2.0-rc.2": "compatible",
+        "0.2.1-rc.2": "compatible"
       }
     },
     "bundle": {
